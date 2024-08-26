@@ -1,0 +1,39 @@
+services:
+  # example service from local
+  local:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: ./workspace
+        target: /workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: always
+
+
+  # example service from ghcr.io
+  ghcr:
+    image: ghcr.io/p1atdev/cu124-uv-tailscale:sha-d98ff98
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: ./workspace
+        target: /workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: always
