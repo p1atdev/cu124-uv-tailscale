@@ -2,7 +2,7 @@
 
 HF_HOME=/workspace/cache
 
-ENV_TXT='
+KYES="
 
 # hf
 export HF_HOME=$HF_HOME
@@ -12,9 +12,14 @@ export HF_HUB_ENABLE_HF_TRANSFER=1
 # wandb
 export WANDB_API_KEY=$WANDB_API_KEY
 
+"
+
+echo "$KEYS" >>/root/.bashrc
+
+PATHS='
 # path
 export PATH="$PATH:~/.local/bin"
 
 '
 
-echo "$ENV_TXT" >>/root/.bashrc
+echo "$PATHS" >>/root/.bashrc

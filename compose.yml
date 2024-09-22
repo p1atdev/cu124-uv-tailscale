@@ -22,7 +22,7 @@ services:
 
   # example service from ghcr.io
   ghcr:
-    image: ghcr.io/p1atdev/cu124-uv-tailscale:sha-d98ff98
+    image: ghcr.io/p1atdev/cu124-uv-tailscale:sha-6015c1c
     env_file:
       - .env
     volumes:
