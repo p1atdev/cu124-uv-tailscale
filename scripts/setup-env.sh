@@ -11,6 +11,10 @@ export HF_HUB_ENABLE_HF_TRANSFER=1
 
 # wandb
 export WANDB_API_KEY=$WANDB_API_KEY
+
+# path
+export PATH=$PATH:~/.local/bin
+
 "
 
 echo "$ENV_TXT" >>/root/.bashrc

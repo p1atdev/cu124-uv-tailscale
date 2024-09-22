@@ -33,11 +33,15 @@ RUN curl -fsSL https://tailscale.com/install.sh | sh
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
     apt-get install git-lfs
 
+# rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
 ADD ./scripts/start.sh /
 ADD ./scripts/setup-starship.sh /
 ADD ./scripts/setup-uv.sh /
 ADD ./scripts/setup-env.sh /
 ADD ./scripts/tailscale.sh /
+ADD ./scripts/setup-zellij.sh /
 
 RUN chmod +x /start.sh &&\
     chmod +x /setup-starship.sh &&\
