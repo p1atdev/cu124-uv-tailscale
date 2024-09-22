@@ -47,8 +47,10 @@ RUN chmod +x /start.sh &&\
     chmod +x /setup-starship.sh &&\
     chmod +x /setup-uv.sh &&\
     chmod +x /setup-env.sh &&\
-    chmod +x /tailscale.sh
+    chmod +x /tailscale.sh &&\
+    chmod +x /setup-zellij.sh
 
+RUN /setup-zellij.sh
 RUN /setup-uv.sh
 RUN /setup-starship.sh
 
